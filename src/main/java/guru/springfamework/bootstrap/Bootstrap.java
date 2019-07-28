@@ -17,24 +17,19 @@ public class Bootstrap implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Category fruits = new Category();
-        fruits.setName("Fruits");
+        Category fruits = Category.builder().name("Fruits").build();
         categoryRepository.save(fruits);
 
-        Category dried = new Category();
-        dried.setName("Dried");
+        Category dried = Category.builder().name("Dried").build();
         categoryRepository.save(dried);
 
-        Category fresh = new Category();
-        fresh.setName("Fresh");
+        Category fresh = Category.builder().name("Fresh").build();
         categoryRepository.save(fresh);
 
-        Category exotic = new Category();
-        exotic.setName("Exotic");
+        Category exotic = Category.builder().name("Exotic").build();
         categoryRepository.save(exotic);
 
-        Category nuts = new Category();
-        nuts.setName("Nuts");
+        Category nuts = Category.builder().name("Nuts").build();
         categoryRepository.save(nuts);
 
         System.out.println("Data loaded = " + categoryRepository.count());

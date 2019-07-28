@@ -14,8 +14,7 @@ public class CategoryMapperTest {
     @Test
     public void categoryToCategoryDTO() {
 
-        Category category = new Category();
-        category.setName(NAME);
+        Category category = Category.builder().name(NAME).id(1L).build();
         category.setId(1L);
 
         CategoryDTO categoryDTO = categoryMapper.categoryToCategoryDTO(category);

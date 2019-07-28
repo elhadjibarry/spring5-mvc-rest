@@ -1,5 +1,6 @@
 package guru.springfamework.api.v1.model;
 
+import lombok.Builder;
 import lombok.Data;
 
 /**
