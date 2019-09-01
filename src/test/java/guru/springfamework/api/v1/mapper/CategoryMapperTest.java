@@ -9,17 +9,18 @@ import static org.junit.Assert.*;
 public class CategoryMapperTest {
 
     public static final String NAME = "Fruits";
+    public static final long ID = 1L;
     CategoryMapper categoryMapper = CategoryMapper.INSTANCE;
 
     @Test
     public void categoryToCategoryDTO() {
 
-        Category category = Category.builder().name(NAME).id(1L).build();
-        category.setId(1L);
+        Category category = Category.builder().name(NAME).id(ID).build();
+        category.setId(ID);
 
         CategoryDTO categoryDTO = categoryMapper.categoryToCategoryDTO(category);
 
-        assertEquals(Long.valueOf(1L), categoryDTO.getId());
+        assertEquals(Long.valueOf(ID), categoryDTO.getId());
         assertEquals(NAME, categoryDTO.getName());
     }
 }
